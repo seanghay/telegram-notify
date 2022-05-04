@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api:
+    image: nginx
+    ports:
+      - "9090:80"
+  
+  notify:
+    image: seanghay/telegram-notify
+    depends_on:
+      - api
+    env_file:
+      - .env
