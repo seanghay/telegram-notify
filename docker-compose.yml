@@ -2,11 +2,8 @@ version: '3'
 services:
   api:
     image: nginx
-    ports:
-      - "9090:80"
-  
   notify:
-    image: seanghay/telegram-notify
+    image: ghcr.io/seanghay/telegram-notify:latest
     depends_on:
       - api
     env_file:
